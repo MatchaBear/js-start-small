@@ -2,20 +2,20 @@
 
 // const axios = require("axios");
 
-const axios = require("axios/dist/browser/axios.cjs"); // browser commonJS bundle (ES2017)
+const axios = require("axios"); // browser commonJS bundle (ES2017)
 // const axios = require('axios/dist/node/axios.cjs'); // node commonJS bundle (ES2017)
 
-mainWindow = new BrowserWindow({
-  webPreferences: {
-    nodeIntegration: true,
-  },
-});
+// mainWindow = new BrowserWindow({
+//   webPreferences: {
+//     nodeIntegration: true,
+//   },
+// });
 
 axios
-  .get("/user?ID=12345")
+  .get("https://jsonplaceholder.typicode.com/todos/1")
   .then(function (response) {
     // handle success
-    console.log(response);
+    console.log(response.data);
   })
   .catch(function (error) {
     // handle error
